@@ -13,12 +13,12 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/checkout" component={Checkout} />
-        <Route exact path="/checkout/information" component={Information} />
-        <Route exact path="/checkout/payment" component={Payment} />
-        <Route exact path="/checkout/success" component={Success} />
-        <Route component={NotFound} />
+        <Route path='/' element={<Home/>} />
+        <Route exact path="/checkout" element={<Checkout/>} />
+        <Route exact path="/checkout/informacion" element={<Information/>} />
+        <Route exact path="/checkout/pago" element={<Payment/>} />
+        <Route exact path="/checkout/exito" element={<Success/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </Router>
   );
