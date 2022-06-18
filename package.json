@@ -1,0 +1,17 @@
+{
+  "name": "shop-coinkoink",
+  "version": "1.0.0",
+  "description": "React shop for piggybank artesanal products",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alcancias",
+    "artesanales",
+    "react",
+    "ecommerce"
+  ],
+  "author": "Luis Olivárez",
+  "license": "ISC"
+}
