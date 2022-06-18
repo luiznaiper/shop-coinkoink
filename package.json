@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: notest specified\" && exit 1",
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "format": "prettier --write \"{*.js,src/**/*.{js,jsx}}\"",
+    "lint": "eslint src/ --fix"
   },
   "keywords": [
     "alcancias",
@@ -21,11 +23,20 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.7.1",
     "@babel/core": "^7.18.5",
+    "@babel/eslint-parser": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
     "html-loader": "^3.1.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
