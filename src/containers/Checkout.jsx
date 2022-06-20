@@ -14,10 +14,10 @@ const Checkout = () => {
           <button type='button'>Eliminar</button>
         </div>
       </div>
-      <div className="Checkout-sidebar">
+      <aside className="Checkout-sidebar">
         <h3>Precio Total: $500</h3>
         <button type='button'>Continuar pedido</button>
-      </div>
+      </aside>
     </div>
   )
 };
