@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/Information.css'
+import '../styles/components/Information.css';
 
 const Information = () => {
   return (
@@ -11,29 +11,25 @@ const Information = () => {
         <div className="Information-form">
           <form action="">
             <label htmlFor="name"></label>
-            <input type="text" placeholder='Nombre completo' name='name' />
+            <input type="text" placeholder="Nombre completo" name="name" />
             <label htmlFor="email"></label>
-            <input type="text" placeholder='Email' name='email' />
+            <input type="text" placeholder="Email" name="email" />
             <label htmlFor="tel"></label>
-            <input type="text" placeholder='Teléfono' name='tel' />
+            <input type="text" placeholder="Teléfono" name="tel" />
             <label htmlFor="address"></label>
-            <input type="text" placeholder='Calle y número #' name='address' />
+            <input type="text" placeholder="Calle y número #" name="address" />
             <label htmlFor="address2"></label>
-            <input type="text" placeholder='Colonia' name='address2' />
+            <input type="text" placeholder="Colonia" name="address2" />
             <label htmlFor="cp"></label>
-            <input type="text" placeholder='Código Postal' name='cp' />
+            <input type="text" placeholder="Código Postal" name="cp" />
             <label htmlFor="state"></label>
-            <input type="text" placeholder='Estado' name='state' />
+            <input type="text" placeholder="Estado" name="state" />
             <label htmlFor="city"></label>
-            <input type="text" placeholder='Ciudad' name='city' />
+            <input type="text" placeholder="Ciudad" name="city" />
           </form>
         </div>
-        <div className="Information-back">
-          Regresar
-        </div>
-        <div className="Information-next">
-          Pagar
-        </div>
+        <div className="Information-back">Regresar</div>
+        <div className="Information-next">Pagar</div>
       </div>
       <aside className="Information-sidebar">
         <h3>Pedido</h3>
@@ -45,7 +41,7 @@ const Information = () => {
         </div>
       </aside>
     </div>
-  )
+  );
 };
 
 export { Information };

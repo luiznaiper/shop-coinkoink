@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/Checkout.css'
+import '../styles/components/Checkout.css';
 
 const Checkout = () => {
   return (
@@ -11,15 +11,15 @@ const Checkout = () => {
             <h4>Nombre del item:</h4>
             <span>$40</span>
           </div>
-          <button type='button'>Eliminar</button>
+          <button type="button">Eliminar</button>
         </div>
       </div>
       <aside className="Checkout-sidebar">
         <h3>Precio Total: $500</h3>
-        <button type='button'>Continuar pedido</button>
+        <button type="button">Continuar pedido</button>
       </aside>
     </div>
-  )
+  );
 };
 
 export { Checkout };
