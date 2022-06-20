@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Layout } from '../components/Layout';
 import {
   Home,
   Checkout,
@@ -12,6 +13,7 @@ import {
 const App = () => {
   return (
     <Router>
+      <Layout>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route exact path="/checkout" element={<Checkout/>} />
@@ -20,6 +22,7 @@ const App = () => {
         <Route exact path="/checkout/exito" element={<Success/>} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
+      </Layout>
     </Router>
   );
 };
