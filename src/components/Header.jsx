@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import '../styles/components/Header.css';
 
 const Header = () => {
@@ -9,9 +9,9 @@ const Header = () => {
         <Link to="/">Coink Oink</Link>
       </h1>
       <div className="Header-checkout">
-       <Link to="/carrito">
-          <i className='fas fa-cart-shopping'/>
-       </Link>        
+        <Link to="/carrito">
+          <i className="fas fa-cart-shopping" />
+        </Link>
       </div>
     </div>
   );

@@ -31,9 +31,7 @@ const Information = () => {
         </div>
         <div className="Information-back">Regresar</div>
         <div className="Information-next">
-          <Link to="/carrito/pago">
-            Pagar
-          </Link>
+          <Link to="/carrito/pago">Pagar</Link>
         </div>
       </div>
       <aside className="Information-sidebar">

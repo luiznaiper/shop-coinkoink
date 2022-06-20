@@ -13,14 +13,14 @@ const Checkout = () => {
             <span>$40</span>
           </div>
           <button type="button">
-            <i className='fas fa-trash-alt'></i>
+            <i className="fas fa-trash-alt"></i>
           </button>
         </div>
       </div>
       <aside className="Checkout-sidebar">
         <h3>Precio Total: $500</h3>
         <Link to="/carrito/informacion">
-            <button type="button">Continuar pedido</button>
+          <button type="button">Continuar pedido</button>
         </Link>
       </aside>
     </div>
