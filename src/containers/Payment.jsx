@@ -2,9 +2,10 @@ import React,{useContext} from 'react';
 import {AppContext} from '../context/AppContext'
 import { PayPalButton } from 'react-paypal-button-v2';
 import '../styles/components/Payment.css';
+import { useNavigate } from 'react-router-dom';
 
 
-const Payment = ({navigate}) => {
+const Payment = () => {
   const {state, addNewOrder} = useContext(AppContext)
   const {cart, buyer} = state
   const paypalOptions = {
@@ -18,6 +19,7 @@ const Payment = ({navigate}) => {
     shape: 'rect'
   }
 
+  const navigate = useNavigate()
   const handlePaymentSuccess = (data) => {
     console.log(data);
     if(data.status === 'COMPLETED') {
@@ -42,7 +44,7 @@ const Payment = ({navigate}) => {
       <div className="Payment-content">
         <h3>Resumen del pedido:</h3>
         {cart.map((item)=> (
-          <div className="Payment-item" key={item.title}>
+          <div className="Payment-item" key={item.id}>
               <div className="Payment-element">
                 <h4>{item.title}</h4>
                 <span>${item.price}</span>
@@ -50,14 +52,27 @@ const Payment = ({navigate}) => {
           </div>
         ))}
         <div className="Payment-button">
-          <PayPalButton 
+        <PayPalButton
+            createOrder={(data, actions) => {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: {
+                      currency_code: 'USD',
+                      value: handleSumTotal(),
+                    },
+                  },
+                ],
+              });
+            }}
             paypalOptions={paypalOptions}
             buttonStyles={buttonStyles}
-            amount={handleSumTotal()}
+            amout={handleSumTotal()}
             onPaymentStart={() => console.log('Start payment')}
-            onPaymentSuccess={handlePaymentSuccess(data)}
-            onPaymentError={error => console.log(error)}
-            onPaymentCancel={data => console.log(data)}
+            onSuccess={(data) => handlePaymentSuccess(data)}
+            onApprove={(data) => handlePaymentSuccess(data)}
+            onPaymentError={(error) => console.log(error)}
+            onPaymentCancel={(data) => console.log(data)}
           />
         </div>
       </div>
