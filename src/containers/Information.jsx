@@ -1,30 +1,29 @@
-import React, {useRef, useContext} from 'react';
-import { Link, useNavigate  } from 'react-router-dom';
-import {AppContext } from '../context/AppContext'
+import React, { useRef, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 import '../styles/components/Information.css';
 
 const Information = () => {
-  const {state, addToBuyer} = useContext(AppContext)
-  const form = useRef(null)
-  const navigate = useNavigate ()
-  const {cart} = state
+  const { state, addToBuyer } = useContext(AppContext);
+  const form = useRef(null);
+  const navigate = useNavigate();
+  const { cart } = state;
 
   const handleSubmit = () => {
-    const formData = new FormData(form.current)
+    const formData = new FormData(form.current);
     const buyer = {
-      'name': formData.get('name'),
-      'email': formData.get('email'),
-      'tel': formData.get('tel'),
-      'address': formData.get('address'),
-      'address2': formData.get('address2'),
-      'cp': formData.get('cp'),
-      'state': formData.get('state'),
-      'city': formData.get('city'),
-    }
+      name: formData.get('name'),
+      email: formData.get('email'),
+      tel: formData.get('tel'),
+      address: formData.get('address'),
+      address2: formData.get('address2'),
+      cp: formData.get('cp'),
+      state: formData.get('state'),
+      city: formData.get('city'),
+    };
     addToBuyer(buyer);
-    navigate('/carrito/pago')
-
-  }
+    navigate('/carrito/pago');
+  };
   return (
     <div className="Information">
       <div className="Information-content">
@@ -53,20 +52,22 @@ const Information = () => {
         </div>
         <div className="Information-back">
           <Link to="/carrito">Regresar</Link>
-          </div>
+        </div>
         <div className="Information-next">
-          <button type="button" onClick={handleSubmit}>Pagar</button>
+          <button type="button" onClick={handleSubmit}>
+            Pagar
+          </button>
         </div>
       </div>
       <aside className="Information-sidebar">
         <h3>Pedido</h3>
         {cart.map((item) => (
-                 <div className="Information-item" key={item.title}>
-                 <div className="Information-element">
-                   <h4>{item.title}</h4>
-                   <span>${item.price}</span>
-                 </div>
-               </div>
+          <div className="Information-item" key={item.title}>
+            <div className="Information-element">
+              <h4>{item.title}</h4>
+              <span>${item.price}</span>
+            </div>
+          </div>
         ))}
       </aside>
     </div>
