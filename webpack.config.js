@@ -60,7 +60,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assests[name].css',
     }),
-    new DotenvWebpackPlugin()
+    new DotenvWebpackPlugin(),
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),
