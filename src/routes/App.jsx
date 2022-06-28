@@ -14,25 +14,32 @@ import { useInitialState } from '../hooks/useInitialState';
 
 const App = () => {
   const initialState = useInitialState();
+  const isEmpty = Object.keys(initialState.state).length;
   return (
-    <AppContext.Provider value={initialState}>
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route exact path="/carrito" element={<Checkout />} />
-            <Route
-              exact
-              path="/carrito/informacion"
-              element={<Information />}
-            />
-            <Route exact path="/carrito/pago" element={<Payment />} />
-            <Route exact path="/carrito/exito" element={<Success />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </Router>
-    </AppContext.Provider>
+    <>
+      {isEmpty > 0 ? (
+        <AppContext.Provider value={initialState}>
+          <Router>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route exact path="/carrito" element={<Checkout />} />
+                <Route
+                  exact
+                  path="/carrito/informacion"
+                  element={<Information />}
+                />
+                <Route exact path="/carrito/pago" element={<Payment />} />
+                <Route exact path="/carrito/exito" element={<Success />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </Router>
+        </AppContext.Provider>
+      ) : (
+        <h1>Cargando...</h1>
+      )}
+    </>
   );
 };
 

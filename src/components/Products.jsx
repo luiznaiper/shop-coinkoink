@@ -4,8 +4,7 @@ import { AppContext } from '../context/AppContext';
 import '../styles/components/Products.css';
 
 const Products = () => {
-  const { state, addToCart } = useContext(AppContext);
-  const { products } = state;
+  const { products, addToCart } = useContext(AppContext);
 
   const handleAddToCart = (product) => () => {
     const random = Math.floor(Math.random() * 1000);
@@ -17,10 +16,11 @@ const Products = () => {
   return (
     <div className="Products">
       <div className="Products-items">
-        {products.map((product) => (
+        {console.log(products)}
+        {products.map((newProduct) => (
           <Product
-            key={product.id}
-            product={product}
+            key={newProduct.id}
+            product={newProduct}
             handleAddToCart={handleAddToCart}
           />
         ))}
