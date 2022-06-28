@@ -62,8 +62,12 @@ module.exports = {
       filename: 'assests[name].css',
     }),
     new webpack.DefinePlugin({
-      'process.env.PAYPAL_CLIENT_PP': JSON.stringify(process.env.PAYPAL_CLIENT_PP),
-      'process.env.GOOGLE_MAPS_API_KEY': JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
+      'process.env.PAYPAL_CLIENT_PP': JSON.stringify(
+        process.env.PAYPAL_CLIENT_PP
+      ),
+      'process.env.GOOGLE_MAPS_API_KEY': JSON.stringify(
+        process.env.GOOGLE_MAPS_API_KEY
+      ),
     }),
   ],
   devServer: {
