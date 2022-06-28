@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
-require('dotenv').config();
+const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -69,7 +69,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assests[name].css',
     }),
-    new webpack.DefinePlugin({
+    new Dotenv({
       'process.env.PAYPAL_CLIENT_PP': JSON.stringify(
         process.env.PAYPAL_CLIENT_PP
       ),
