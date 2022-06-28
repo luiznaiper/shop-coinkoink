@@ -3,9 +3,9 @@
     "name": "Tienda de Alcancías Artesanales Personalizadas",
     "icons": [
         {
-            "src": "assets/coink-oink.jpeg",
+            "src": "assets/logo-coink-oink.png",
             "sizes": "512x512",
-            "type": "image/jpeg"
+            "type": "image/png"
         }
     ],
     "start_url": "/",

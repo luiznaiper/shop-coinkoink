@@ -62,7 +62,7 @@ module.exports = {
       patterns: [
         { from: 'public/manifest.json', to: '' },
         { from: 'public/service-worker.js', to: '' },
-        { from: 'public/assets/coink-oink.jpeg', to: 'assets' },
+        { from: 'public/assets/logo-coink-oink.png', to: 'assets' },
       ],
     }),
 
