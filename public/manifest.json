@@ -1,0 +1,15 @@
+{
+    "short_name": "Coink Oink",
+    "name": "Tienda de Alcancías Artesanales Personalizadas",
+    "icons": [
+        {
+            "src": "assets/coink-oink.jpeg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#222",
+    "theme_color": "#222",
+    "display": "standalone"
+}

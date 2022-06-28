@@ -8,10 +8,26 @@
     <title>Coink Oink</title>
     <!-- íconos de fontawesome -->
     <script src="https://kit.fontawesome.com/bd6261fffd.js" crossorigin="anonymous"></script>
+    <link rel="manifest" href="./manifest.json">
 </head>
 
 <body>
     <div id="root"></div>
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function (err) {
+                console.log('ServiceWorker registration failed: ', err);
+            }).catch(function (err) {
+                console.log(err)
+            });
+        });
+    } else {
+        console.log('service worker is not supported');
+    }
+</script>
 
 </html>
