@@ -17,10 +17,10 @@ const Products = () => {
     <div className="Products">
       <div className="Products-items">
         {console.log(products)}
-        {products.map((newProduct) => (
+        {products.map((product) => (
           <Product
-            key={newProduct.id}
-            product={newProduct}
+            key={product.id}
+            product={product}
             handleAddToCart={handleAddToCart}
           />
         ))}
